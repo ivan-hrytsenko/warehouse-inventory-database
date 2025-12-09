@@ -1,0 +1,28 @@
+@startuml
+
+entity Supplier {
+    *supplier_id : int <<PK>>
+    --
+    company_name : varchar
+    phone : varchar
+}
+
+entity Product {
+    *sku : int <<PK>>
+    --
+    name : varchar
+    price : decimal
+    stock : int
+}
+
+entity Category {
+    *category_id : int <<PK>>
+    --
+    name : varchar
+    description : text
+}
+
+Category ||--o{ Product : belongs_to
+Supplier ||--o{ Product : supplies
+
+@enduml
