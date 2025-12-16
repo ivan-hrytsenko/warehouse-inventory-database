@@ -1,0 +1,53 @@
+@startuml
+left to right direction
+skinparam rectangle<<transparent>> {
+  BackgroundColor Transparent
+  BorderColor Transparent
+  FontColor Transparent
+}
+
+' Actors
+actor "Warehouse Manager" as Manager
+actor "Inventory Clerk" as Clerk
+actor "Payment Gateway" as PG
+
+' Generalization
+Manager -|> Clerk : inherits all rights
+
+rectangle InventorySystem {
+    usecase "Manage Categories" as UCg              /' FR04 '/
+    usecase "Manage Suppliers" as UCf               /' FR05 '/
+    usecase "Generate Low Stock Report" as UCgR     /' FR07 '/
+
+    rectangle placeholder1 <<transparent>> {
+        usecase "Manage Product Catalog" as UCa     /' Grouping related UCs '/
+        usecase "Add New Product" as UCb            /' FR01 '/
+        usecase "Edit Product Details" as UCc       /' FR02 '/
+        usecase "Search Inventory" as UCd           /' FR03 '/
+    }
+
+    rectangle placeholder2 <<transparent>> {
+        usecase "Process Sales Transaction" as UCh  /' FR06 '/
+        usecase "Record Audit Log" as UCx           /' NFR04 '/
+    }
+
+    UCa .> UCb : <<include>>
+    UCa .> UCc : <<include>>
+    UCc .> UCd : <<extend>>
+    UCh .left.> UCx : <<include>>
+}
+
+' Actor Associations
+Clerk -- UCb
+Clerk -- UCc
+Clerk -- UCd
+Clerk -- UCh
+
+Manager -- UCa
+Manager -- UCf
+Manager -- UCg
+Manager -- UCgR
+
+UCh -- PG : uses
+
+@enduml
