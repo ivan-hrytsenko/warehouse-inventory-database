@@ -1,0 +1,48 @@
+@startuml
+skinparam style strictuml
+skinparam ConditionEndStyle hline
+
+|Warehouse Manager|
+start
+:Identify Low Stock;
+:Create Purchase Order;
+
+|Supplier|
+:Receive Purchase Order;
+if (Order Confirmed?) then (yes)
+    :Prepare Goods;
+    :Ship Items;
+
+    |Warehouse Manager|
+    :Receive Delivery;
+    fork
+        :Verify Shipping Documents;
+    fork again
+        :Unpack Items;
+    end fork
+
+    :Perform Quality Check;
+    if (Quality OK?) then (yes)
+        |Inventory System|
+        :Update Stock Levels;
+        :Log Transaction;
+
+        |Warehouse Manager|
+        :Close Purchase Order;
+        stop
+    else (no)
+        |Warehouse Manager|
+        :Notify Supplier of Defect;
+
+        |Supplier|
+        :Process Refund/Replacement;
+        stop
+    endif
+
+else (no)
+    |Warehouse Manager|
+    :Cancel Restocking Process;
+    stop
+endif
+
+@enduml
