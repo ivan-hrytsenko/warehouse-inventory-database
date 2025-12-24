@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/143.0.0.0 Safari/537.36" version="29.2.9">
   <diagram name="Page-1" id="gmlQ9yiaSUmoAzgInSDU">
-    <mxGraphModel dx="1489" dy="803" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+    <mxGraphModel dx="992" dy="535" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -68,7 +68,7 @@
             <mxPoint x="450" y="470" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1K3YWA8niVQedJA91Um9-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=light-dark(#000000,#000000);fillColor=light-dark(#FFFFFF,#FFFFFF);strokeColor=light-dark(#000000,#000000);strokeWidth=2;fontFamily=Times New Roman;fontSize=14;" value="Cancel Restocking Process;" vertex="1">
+        <mxCell id="1K3YWA8niVQedJA91Um9-22" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=light-dark(#000000,#000000);fillColor=light-dark(#FFFFFF,#FFFFFF);strokeColor=light-dark(#000000,#000000);strokeWidth=2;fontFamily=Times New Roman;fontSize=14;" value="Cancel Restocking Process" vertex="1">
           <mxGeometry height="40" width="120" x="119.75" y="440" as="geometry" />
         </mxCell>
         <mxCell id="1K3YWA8niVQedJA91Um9-23" parent="1" style="ellipse;html=1;shape=endState;fillColor=#000000;strokeColor=light-dark(#000000,#000000);strokeWidth=2;" value="" vertex="1">
@@ -99,10 +99,10 @@
             <mxPoint x="200" y="660" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="1K3YWA8niVQedJA91Um9-33" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=light-dark(#000000,#000000);fillColor=light-dark(#FFFFFF,#FFFFFF);strokeColor=light-dark(#000000,#000000);strokeWidth=2;fontFamily=Times New Roman;fontSize=14;" value="Receive Delivery" vertex="1">
+        <mxCell id="1K3YWA8niVQedJA91Um9-33" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=light-dark(#000000,#000000);fillColor=light-dark(#FFFFFF,#FFFFFF);strokeColor=light-dark(#000000,#000000);strokeWidth=2;fontFamily=Times New Roman;fontSize=14;" value="Unpack Items" vertex="1">
           <mxGeometry height="40" width="120" x="200" y="720" as="geometry" />
         </mxCell>
-        <mxCell id="1K3YWA8niVQedJA91Um9-34" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=light-dark(#000000,#000000);fillColor=light-dark(#FFFFFF,#FFFFFF);strokeColor=light-dark(#000000,#000000);strokeWidth=2;fontFamily=Times New Roman;fontSize=14;" value="Receive Delivery" vertex="1">
+        <mxCell id="1K3YWA8niVQedJA91Um9-34" parent="1" style="rounded=1;whiteSpace=wrap;html=1;arcSize=40;fontColor=light-dark(#000000,#000000);fillColor=light-dark(#FFFFFF,#FFFFFF);strokeColor=light-dark(#000000,#000000);strokeWidth=2;fontFamily=Times New Roman;fontSize=14;" value="Verify Shipping Documents" vertex="1">
           <mxGeometry height="40" width="120" x="40" y="720" as="geometry" />
         </mxCell>
         <mxCell id="1K3YWA8niVQedJA91Um9-35" edge="1" parent="1" source="1K3YWA8niVQedJA91Um9-29" style="edgeStyle=orthogonalEdgeStyle;html=1;verticalAlign=bottom;endArrow=classic;endSize=8;strokeColor=light-dark(#000000,#000000);rounded=0;strokeWidth=2;endFill=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.786;exitY=1;exitDx=0;exitDy=0;exitPerimeter=0;" target="1K3YWA8niVQedJA91Um9-33" value="">
