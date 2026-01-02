@@ -1,0 +1,76 @@
+@startuml
+
+package "Inventory Management System"{
+    interface "Web API" as API_IF
+
+    component [Inventory UI] as UI
+
+    component "Backend Server" {
+        [Sales Service] as Sales
+        
+        [Inventory Service] as InvService
+        [Transaction Manager] as TransMgr
+        
+        Sales ..> TransMgr : use
+        InvService ..> TransMgr : use
+    }
+
+    database "PostgreSQL" {
+        [Product Repository] as Repo
+        [Audit Logs] as Logs
+    }
+
+    ' Internal Dependencies
+    UI -( API_IF
+    API_IF -- Sales
+
+    TransMgr --( "Log Write"
+    "Log Write" -- Logs
+
+    TransMgr --( "DB Query"
+    "DB Query" -- Repo
+}
+
+node "External Services" {
+    component [Payment Gateway] as Payment
+    component [Supplier System] as Supplier
+}
+
+' External Dependencies
+Sales --( "HTTPS/JSON"
+"HTTPS/JSON" -- Payment : Process Sale
+
+InvService --( "XML/SOAP"
+"XML/SOAP" -- Supplier : Restock Order
+
+' Notes
+note as ER_NOTE
+  **Trace to ER Model:**
+  Manages **Product**, **Category**, and 
+  **Supplier** entities defined in ER diagram.
+end note
+
+note as UC_NOTE
+  **Trace to Use Case Diagram:**
+  Provides interfaces for **Inventory Clerk**
+  and **Warehouse Manager** actors.
+end note
+
+note as SEQUENCE_NOTE
+  **Trace to Sequence Diagram:**
+  Implements the **processSale()** logic 
+  from the Sales Sequence flow.
+end note
+
+note as ACTIVITY_NOTE
+  **Trace to Activity Diagram:**
+  Orchestrates the **Restocking Process**
+  and communication with Supplier.
+end note
+
+Repo . ER_NOTE
+UI .left. UC_NOTE
+Sales .left. SEQUENCE_NOTE
+InvService .right. ACTIVITY_NOTE
+
+@enduml
