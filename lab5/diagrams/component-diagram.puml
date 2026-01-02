@@ -7,7 +7,6 @@ package "Inventory Management System"{
 
     component "Backend Server" {
         [Sales Service] as Sales
-        
         [Inventory Service] as InvService
         [Transaction Manager] as TransMgr
         
